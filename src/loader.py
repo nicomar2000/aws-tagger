@@ -17,6 +17,7 @@ def get_job_information():
             job_information['region_name'] = t_aws_regions.split(',')
             job_information['aws_profile'] = aws_profile
     except:
+        # Not an elegant way to catch empty projects
         pass
 
     # Get resources
@@ -24,6 +25,7 @@ def get_job_information():
         for id,resource_id, depth_level in query("get", "SELECT * FROM aws_module"):
             job_information['aws_resources'][resource_id] = { 'depth_level': depth_level}
     except:
+        # Not an elegant way to catch empty projects
         pass
 
     # Get hint list
@@ -40,6 +42,7 @@ def get_job_information():
                 alternate_hints_list.append(alternative_hint_name)
             job_information['hints_lists'][tag_key][hint_name] = alternate_hints_list
     except:
+        # Not an elegant way to catch empty projects
         pass
     
     return job_information

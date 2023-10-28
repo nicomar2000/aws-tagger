@@ -160,7 +160,7 @@ def hint_processor(job_information, this_region, existing_tags, resource_id, hin
                                 this_resource = importlib.import_module( f"aws_resources.{resource_name}")
                                 mapped_resource_existing_tags = this_resource.get_tag(job_information, this_region, mapped_resource_id)
                             except:
-                                send_logs('ERRrOR', 'Failed to run module '+str(resource_name) )
+                                send_logs('ERROR', 'Failed to run module '+str(resource_name) )
 
                         # Get tag suggestion from this mapped resources present tags                                
                         mapped_resource_tag_result = get_tag_suggestion(mapped_resource_existing_tags, mapped_resource_id, hints_lists, this_tag_key, description, display_name)

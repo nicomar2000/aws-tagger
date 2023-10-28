@@ -14,6 +14,7 @@ def review():
         query("try", "CREATE TABLE current_tags (id INTEGER PRIMARY KEY,aws_id,key,value)")
         query("try", "CREATE TABLE missing_tags (id INTEGER PRIMARY KEY,resource_id,hint_source,tag_key,possible_value,found_in,hint,match_string)")
     except:
+        # Not a very elegant way to check if table already exist
         pass
 
     # Check for job file
@@ -42,7 +43,7 @@ def review():
                 except ValueError:
                     send_logs('ERROR', 'Failed to run module '+str(each_aws_resource)+' error:'+str(ValueError))
             else:
-                send_logs('ERROR', '001 AWS resource module missing: '+str(each_aws_resource))
+                send_logs('ERROR', 'AWS resource module missing: '+str(each_aws_resource))
 
     send_logs('INFO', 'Lookup process ended')
 

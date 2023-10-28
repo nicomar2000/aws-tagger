@@ -366,6 +366,7 @@ def main():
         </tr>
 '''
     except:
+        # Not a very elegant way to check if resources exist
         pass
 
     table += '''
