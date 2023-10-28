@@ -17,6 +17,7 @@ def main():
         query("try", "CREATE TABLE hints_lists (id INTEGER PRIMARY KEY,tag_key, hint_name)")
         query("try", "CREATE TABLE alternative_hint (id INTEGER PRIMARY KEY,tag_key, hint_name, alternative_hint_name)")
     except:
+        # There is probably a more elegant way to create table if they dont exist
         pass
     
     ui_builder.load_ui_data()
