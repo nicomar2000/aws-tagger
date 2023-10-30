@@ -25,12 +25,11 @@ http://localhost:8080
 ```
 
 3. On the opened UI, enter the following details:
-    - The AWS CLI profile name: This should correspond to the profile configured with your desired AWS account.
-    - The AWS region: Select the region where your resources are located.
-    - Resource type: Define what kinds of resources you want to evaluate for tagging. You will also see a dropdown to select the maximum number of associated resources to search for hints. If no hints are found in the resource itself, the script will search for hints within the associated resources based on a user-defined number next to the resource name. Select how many associated resources the script should search for tags for each resource type, where if you select the number one, the script would only search for hints on one of the available associated resources. 
-    - The tag keys: here you can provide hints for generating possible values for each tag. The script will generate possible values from these hints or from associated resources hints, and will use one of these values if the tag is not present on a resource
+    - Profile: This should correspond to you AWS CLI profile configured on your AWS account.
+    - AWS regions: Select the region where your resources are located.
+    - Resources type: Define what kinds of resources you want to evaluate for tagging. You will also see a dropdown to select the maximum number of associated resources to search for hints. If no hints are found in the resource itself, the script will search for hints within the associated resources based on this number. Select how many associated resources the script should search for tags on each resource type, where if you select the number one, the script would only search for hints on one of the available associated resources. 
+    - Tag keys: Define the resources tag key and value you want to evaluate. Here you can provide hints for generating possible values for each tag. The script will generate possible values from these hints or from associated resources hints, and will use one of these values if the tag is not present on a resource
   
-
 
 ## Support & Contribution
 
